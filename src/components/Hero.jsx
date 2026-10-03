@@ -163,7 +163,7 @@ const Hero = () => {
       `}</style>
 
       {/* 1. Cinematic Background Gradient & Marquee */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/90 to-[#050505] z-0">
+      <div className="hero-background absolute inset-0 bg-gradient-to-t from-[#050505] via-black/90 to-[#050505] z-0 transition-all duration-500">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-10">
           <div className="flex whitespace-nowrap animate-marquee">
             {[...developerRoles, ...developerRoles].map((role, idx) => (
@@ -288,7 +288,7 @@ const Hero = () => {
 
           {/* Right Side: Technical Specs & Stack */}
           <div className="hero-anim-item lg:col-span-3 flex flex-col items-start lg:items-end space-y-4 text-left lg:text-right">
-            <div className="p-5 bg-black/80 backdrop-blur-2xl border border-white/15 rounded-xl shadow-2xl max-w-xs">
+            <div className="theme-panel p-5 bg-black/80 backdrop-blur-2xl border border-white/15 rounded-xl shadow-2xl max-w-xs transition-all duration-500">
               <h3 className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold mb-2">CORE INTELLIGENCE DOMAINS</h3>
               <p className="text-xs text-white/80 leading-relaxed font-light">
                 Digital Forensics • Ethical Hacking • Security Research • Developer
@@ -330,14 +330,36 @@ const Hero = () => {
           <a href="#building" className="hover:text-red-500 transition-colors">Building</a>
           <a href="#contact" className="hover:text-red-500 transition-colors">Contact</a>
         </nav>
-        <a
-          href="https://drive.google.com/drive/folders/1yIZ3hE4-sbeHPNIKecTMTKEV6YaegKhF?usp=drive_link"
-          target="_blank"
-           rel="noopener noreferrer"
-          className="px-5 py-2 rounded bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(229,9,20,0.6)] hover:scale-105 active:scale-95"
-        >
-          My Resume
-        </a>
+        <div className="flex items-center gap-3">
+          {/* Theme Switch */}
+          <ThemeToggle />
+
+          {/* Resume */}
+          <a
+            href="https://drive.google.com/drive/folders/1yIZ3hE4-sbeHPNIKecTMTKEV6YaegKhF?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              px-5
+              py-2
+              rounded
+              bg-red-600
+              hover:bg-red-700
+              text-white
+              font-bold
+              text-xs
+              uppercase
+              tracking-widest
+              transition-all
+              duration-300
+              shadow-[0_0_20px_rgba(229,9,20,0.6)]
+              hover:scale-105
+              active:scale-95
+            "
+          >
+            My Resume
+          </a>
+        </div>
       </header>
     </section>
   );
