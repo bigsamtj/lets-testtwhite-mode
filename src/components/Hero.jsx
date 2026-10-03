@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import pictureImg from '../assets/Portfolio/picture.png';
+import ThemeToggle from './ThemeToggle';
 
 const Hero = () => {
   const sectionRef = useRef(null);
@@ -134,7 +135,20 @@ const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-screen bg-[#050505] overflow-hidden flex flex-col justify-between select-none cursor-none"
+      className="
+  hero-section
+  relative
+  w-full
+  h-screen
+  overflow-hidden
+  flex
+  flex-col
+  justify-between
+  select-none
+  cursor-none
+  transition-colors
+  duration-500
+"
     >
       <style>{`
         @keyframes marquee {
